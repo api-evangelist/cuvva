@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cuvva/docs/blob/master/apis/auth.md
+docs: https://github.com/cuvva/docs/blob/master/apis/auth.md
+summary:
+  types: [oauth2]
+  oauth2_flows: [authorizationCode, refreshToken]
+  token_type: bearer
+  notes: >-
+    Cuvva runs its own OAuth 2.0 implementation via the service-auth API. Clients
+    obtain a short-lived JWT access_token (token_type: bearer) plus a rotating
+    refresh_token. The authorization step is delivered by email (authorization
+    codes sent to an identifier), which the docs explicitly note is NOT
+    OAuth-spec-compliant for the authorization endpoint, though the token endpoint
+    follows RFC 6749 section 3.2. Refresh tokens are single-use and rotate on every
+    use; reuse revokes the whole chain.
+schemes:
+  - name: OAuth2
+    type: oauth2
+    sources: [https://github.com/cuvva/docs/blob/master/apis/auth.md]
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://api.prod.cuv-prod.app/1/service-auth/2 (send_authorization_code method)
+        tokenUrl: https://api.prod.cuv-prod.app/1/service-auth/2 (authenticate method)
+        notes: Authorization code delivered by email; not spec-compliant at the authorize endpoint.
+      - flow: refreshToken
+        tokenUrl: https://api.prod.cuv-prod.app/1/service-auth/2 (authenticate method)
+        notes: Refresh tokens are single-use and rotate; the returned refresh_token must be used going forward.
+  - name: BearerAccessToken
+    type: http
+    scheme: bearer
+    bearerFormat: JWT
+    sources: [https://github.com/cuvva/docs/blob/master/apis/auth.md]
+    notes: Downstream services authorize requests with the JWT access_token as a bearer token; the JWT subject must match the user_id for non-internal requests.
