@@ -1,0 +1,68 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cuvva + npm registry (maintainer:cuvva-ci)
+packages:
+  - language: javascript
+    registry: npm
+    name: "@cuvva/crpc"
+    url: https://www.npmjs.com/package/@cuvva/crpc
+    install: npm install @cuvva/crpc
+    official: true
+    description: Simple library for making requests to Cuvva-style RPC APIs (the client for the documented service APIs).
+    role: client
+  - language: javascript
+    registry: npm
+    name: "@cuvva/json-client"
+    url: https://www.npmjs.com/package/@cuvva/json-client
+    install: npm install @cuvva/json-client
+    official: true
+    description: Simple library for requesting data from JSON APIs.
+    role: client
+  - language: javascript
+    registry: npm
+    name: "@cuvva/ksuid"
+    url: https://www.npmjs.com/package/@cuvva/ksuid
+    install: npm install @cuvva/ksuid
+    official: true
+    description: Generate prefixed, k-sorted globally unique identifiers (the ID scheme used across Cuvva services).
+    role: utility
+  - language: javascript
+    registry: npm
+    name: "@cuvva/postcodesio-client"
+    url: https://www.npmjs.com/package/@cuvva/postcodesio-client
+    install: npm install @cuvva/postcodesio-client
+    official: true
+    description: Abstracts access to the Postcodes.io API.
+    role: utility
+  - language: javascript
+    registry: npm
+    name: cuvva-log
+    url: https://www.npmjs.com/package/cuvva-log
+    install: npm install cuvva-log
+    official: true
+    description: Standardized logging used by Cuvva systems.
+    role: utility
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/cuvva/cuvva-public-go
+    url: https://pkg.go.dev/github.com/cuvva/cuvva-public-go
+    install: go get github.com/cuvva/cuvva-public-go
+    official: true
+    description: Cuvva's public Go libraries (crpc, ksuid, cher errors, and more).
+    role: client
+  - language: go
+    registry: github
+    name: github.com/cuvva/ksuid-go
+    url: https://github.com/cuvva/ksuid-go
+    install: go get github.com/cuvva/ksuid-go
+    official: true
+    description: K-Sortable globally Unique ID (Go).
+    role: utility
+  - language: go
+    registry: github
+    name: github.com/cuvva/dln-go
+    url: https://github.com/cuvva/dln-go
+    install: go get github.com/cuvva/dln-go
+    official: true
+    description: Driving license number parse/generate library (Go).
+    role: utility

@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cuvva/docs/tree/master/apis + https://www.cuvva.com
+standards:
+  - id: oauth2
+    conforms: partial
+    evidence: >-
+      Runs an OAuth 2.0 authorization-code + refresh-token implementation (RFC 6749
+      token endpoint), but the docs explicitly note the authorize endpoint is not
+      spec-compliant (authorization code delivered by email).
+  - id: oidc
+    conforms: false
+    evidence: No /.well-known/openid-configuration (404); no OpenID Connect discovery.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Uses Cuvva's own coded-error standard (cher), not application/problem+json.
+  - id: json
+    conforms: true
+    evidence: All documented request/response bodies are JSON.
+  - id: fca-regulated
+    conforms: true
+    evidence: >-
+      FCA-authorised intermediary (Cuvva / FRN in the UK Financial Services
+      Register); regulatory posture, not an information-security certification.
+notes: >-
+  No published SOC 2 / ISO 27001 / PCI DSS security-certification program was
+  found on the public site, so no Compliance pointer is emitted. FCA regulation is
+  a financial-conduct authorisation, recorded here as evidence only.

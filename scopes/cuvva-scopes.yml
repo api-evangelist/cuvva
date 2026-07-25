@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cuvva/docs/blob/master/apis/auth.md
+docs: https://github.com/cuvva/docs/blob/master/apis/auth.md
+model: >-
+  Cuvva's OAuth 2.0 implementation issues scoped access/refresh tokens. Scopes
+  follow an "<audience>:<permission>" naming convention. Scopes are optional on
+  refresh/authenticate; when omitted the scopes of the passed-in refresh token are
+  inherited. Only scopes observed verbatim in the public auth docs are recorded
+  here — Cuvva does not publish a complete scope reference.
+schemes:
+  - name: OAuth2
+    source: https://github.com/cuvva/docs/blob/master/apis/auth.md
+    flows:
+      - flow: authorizationCode
+      - flow: refreshToken
+scopes:
+  - scope: "self:official_app"
+    description: >-
+      Audience "self" (the acting user) with the official-app permission — the
+      scope granted to Cuvva's own first-party mobile apps, observed in the
+      authenticate response example.
+    flows: [authorizationCode, refreshToken]
+    sources: [https://github.com/cuvva/docs/blob/master/apis/auth.md]

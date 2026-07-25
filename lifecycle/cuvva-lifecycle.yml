@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cuvva/docs/tree/master/apis
+versioning:
+  scheme: date-based / numeric path segment, per service
+  detail: >-
+    Each Cuvva service is versioned independently. Auth uses date-stamped versions
+    (2017-05-09, 2018-03-06, 2018-12-11, 2020-06-02, ...) some of which are aliases
+    for app compatibility; other services carry a numeric version in the path
+    (/service-auth/2, /service-mot/1). Per-service changelogs document breaking vs
+    non-breaking changes.
+  docs: https://github.com/cuvva/docs/blob/master/apis/auth.md
+deprecation:
+  practiced: true
+  detail: >-
+    Cuvva documents version withdrawal explicitly (e.g. auth 2017-05-09 marked "to
+    be withdrawn imminently", with removed methods listed). No formal dated
+    deprecation policy page or RFC 8594 Sunset/Deprecation header support is
+    published.
+status_page: https://status.cuvva.com
+sla:
+  url: null
+  detail: No public SLA / uptime target is published.
+deprecated_operations: []

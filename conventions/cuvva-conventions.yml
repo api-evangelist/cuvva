@@ -1,0 +1,51 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cuvva/docs/tree/master/apis
+summary: >-
+  Cross-cutting request/response semantics for Cuvva's service APIs, captured from
+  the public docs. Cuvva exposes a fleet of small single-purpose services (auth,
+  vehicle, mot, motor-coverage, billing, promo, profile, ...), most conforming to
+  an internal "Cuvva services standard". Two calling styles appear: crpc-style RPC
+  methods (POST a JSON body to a method endpoint) and REST-ish resource endpoints.
+authentication:
+  style: oauth2-bearer-jwt
+  detail: JWT access_token as bearer; JWT subject must match user_id for non-internal requests.
+  ref: authentication/cuvva-authentication.yml
+versioning:
+  style: date-based per service
+  detail: >-
+    Each service is independently versioned with date stamps (e.g. 2018-03-06) or
+    a numeric path segment (e.g. /service-auth/2, /service-mot/1). Versions are
+    documented with explicit changelogs per service and MUST NOT be mixed within a
+    single client — all requests use one version. Some versions are marked "to be
+    withdrawn".
+  ref: lifecycle/cuvva-lifecycle.yml
+environments:
+  prod: https://api.prod.cuv-prod.app
+  sandbox: https://api.sandbox.cuv-nonprod.app
+  dev: https://api.dev.cuv-nonprod.app
+  detail: >-
+    Shared-data services (auth, vehicle, mot, upload, ...) use the same data in dev
+    and prod so IDs are portable across environments; a separate sandbox mirrors
+    prod for isolated testing. Non-shared services (billing, motor-coverage, flexi,
+    ...) cannot be used across environments.
+identifiers:
+  scheme: ksuid (prefixed, k-sortable)
+  detail: >-
+    Resource IDs are prefixed KSUIDs (e.g. client_000000BPG6..., reftok_...).
+    Some legacy IDs are MongoDB ObjectIDs. Library published as @cuvva/ksuid and
+    cuvva/ksuid-go.
+error_envelope:
+  format: cuvva-standard (cher)
+  detail: Coded errors that may nest a `reason` cause; see errors/cuvva-error-codes.yml.
+  ref: errors/cuvva-error-codes.yml
+response_conventions:
+  success_no_content: >-
+    Some write endpoints return 204 No Content; the docs reserve the right to
+    return a 2xx body later, and state this is not a breaking change.
+idempotency:
+  supported: false
+  detail: No idempotency-key header or idempotent-write contract is documented in the public API docs.
+pagination:
+  supported: unknown
+  detail: No cross-cutting pagination convention is documented in the public API docs.

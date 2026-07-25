@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of cuvva.com + API hosts
+hosts:
+  - host: https://www.cuvva.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+  - host: https://api.prod.cuv-prod.app
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+notes: >-
+  No /.well-known/ discovery documents are served. A live security contact is
+  instead published via the cuvva.com DNS CAA iodef record (security@cuvva.com) —
+  see security/cuvva-vulnerability-disclosure.yml. No pointer is emitted since no
+  well-known catalog was found.

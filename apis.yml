@@ -1,26 +1,119 @@
 aid: cuvva
 name: Cuvva
-description: Cuvva is a company surfaced as a portfolio company of seedcamp, techstars and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Cuvva is a UK insurtech that pioneered flexible, short-term car and van
+  insurance sold entirely through its mobile apps. Founded in 2015 as the first
+  app to sell temporary car insurance in the UK, it offers policies from one hour
+  up to 28 days, learner-driver cover, drive-away cover for newly purchased
+  vehicles, temporary van and motorhome insurance, and a rolling subscription
+  product (formerly Flexi). Cuvva is FCA-authorised and has sold over 16 million
+  policies to 1.7M+ drivers. Its engineering is built on a fleet of small
+  single-purpose service APIs (auth, vehicle, MOT, motor-coverage, billing, promo,
+  profile, upload, terms, notification and more), publicly documented on GitHub and
+  secured with an in-house OAuth 2.0 implementation using JWT bearer tokens.
 url: https://raw.githubusercontent.com/api-evangelist/cuvva/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - seedcamp
 - techstars
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-api-surface
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.cuvva.com/favicon.ico
 tags:
 - Company
-apis: []
+- Insurance
+- Insurtech
+- Car Insurance
+- Financial Services
+- Mobile
+- OAuth
+- United Kingdom
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Cuvva Services API
+  description: >-
+    Cuvva's fleet of public single-purpose service APIs — auth (OAuth 2.0),
+    vehicle lookup, MOT status, motor-coverage quotes/policies, billing, promo,
+    profile, upload, terms, notification and more. Most conform to an internal
+    Cuvva services standard using crpc-style RPC methods and coded (cher) errors.
+  humanURL: https://github.com/cuvva/docs/tree/master/apis
+  baseURL: https://api.prod.cuv-prod.app
+  tags:
+  - Insurance
+  - OAuth
+  - Vehicle Data
+  properties:
+  - type: Documentation
+    url: https://github.com/cuvva/docs/tree/master/apis
+  - type: Authentication
+    url: authentication/cuvva-authentication.yml
 common:
 - type: Website
-  url: http://cuvva.com
+  url: https://www.cuvva.com
+- type: DeveloperPortal
+  url: https://github.com/cuvva/docs
+- type: Documentation
+  url: https://github.com/cuvva/docs/tree/master/apis
+- type: APIReference
+  url: https://github.com/cuvva/docs/tree/master/apis
+- type: GitHubOrganization
+  url: https://github.com/cuvva
+- type: Support
+  url: https://support.cuvva.com/en
+- type: HelpCenter
+  url: https://support.cuvva.com/en
+- type: StatusPage
+  url: https://status.cuvva.com
+- type: TermsOfService
+  url: https://support.cuvva.com/en/articles/5907873-cuvva-s-terms-and-conditions
+- type: PrivacyPolicy
+  url: https://support.cuvva.com/en/articles/5907862-cuvva-s-privacy-notice
+- type: Authentication
+  url: authentication/cuvva-authentication.yml
+- type: OAuthScopes
+  url: scopes/cuvva-scopes.yml
+- type: Packages
+  url: packages/cuvva-packages.yml
+- type: SDKs
+  url: packages/cuvva-packages.yml
+- type: ErrorCatalog
+  url: errors/cuvva-error-codes.yml
+- type: Conventions
+  url: conventions/cuvva-conventions.yml
+- type: Lifecycle
+  url: lifecycle/cuvva-lifecycle.yml
+- type: Conformance
+  url: conformance/cuvva-conformance.yml
+- type: DomainSecurity
+  url: security/cuvva-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/cuvva-vulnerability-disclosure.yml
+- type: Security
+  url: security/cuvva-vulnerability-disclosure.yml
+- type: LLMsTxt
+  url: llms/cuvva-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

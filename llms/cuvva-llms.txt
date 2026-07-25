@@ -1,0 +1,35 @@
+# Cuvva
+
+> Cuvva is a UK insurtech offering flexible, short-term car and van insurance through its mobile apps — from one-hour to 28-day policies, learner-driver cover, drive-away cover, and a subscription (Flexi) product. Cuvva exposes a fleet of small single-purpose service APIs (auth, vehicle, MOT, motor-coverage, billing, promo, profile, and more) documented publicly on GitHub, secured with its own OAuth 2.0 implementation and JWT bearer tokens.
+
+## APIs
+
+- [Cuvva services API docs](https://github.com/cuvva/docs/tree/master/apis): Public documentation for Cuvva's service APIs (auth, vehicle, mot, motor-coverage, billing, promo, profile, upload, terms, notification, and more).
+- Production base URL: https://api.prod.cuv-prod.app
+- Sandbox base URL: https://api.sandbox.cuv-nonprod.app
+- Auth: OAuth 2.0 (service-auth) with JWT bearer access tokens and rotating refresh tokens.
+
+## Specs & artifacts
+
+- [Authentication profile](authentication/cuvva-authentication.yml): OAuth 2.0 + JWT bearer model.
+- [OAuth scopes](scopes/cuvva-scopes.yml): scope model and documented scopes.
+- [Error codes](errors/cuvva-error-codes.yml): Cuvva Standard (cher) coded errors.
+- [API conventions](conventions/cuvva-conventions.yml): versioning, environments, identifiers, error envelope.
+- [Lifecycle](lifecycle/cuvva-lifecycle.yml): per-service date-based versioning, status page.
+- [Packages](packages/cuvva-packages.yml): first-party npm and Go client/utility libraries.
+- [Conformance](conformance/cuvva-conformance.yml): OAuth2 / JSON / FCA posture.
+- [Domain security](security/cuvva-domain-security.yml): TLS/HSTS/SPF/DMARC/CAA probe.
+- [Vulnerability disclosure](security/cuvva-vulnerability-disclosure.yml): security@cuvva.com contact.
+
+## Docs
+
+- [Developer docs (GitHub)](https://github.com/cuvva/docs): Cuvva's public documentation repository.
+- [GitHub organization](https://github.com/cuvva): Open-source libraries and docs.
+- [Help Centre](https://support.cuvva.com/en): Customer support and how-insurance-works guides.
+- [Status page](https://status.cuvva.com): Service status.
+- [Website](https://www.cuvva.com): Product marketing site.
+
+## Legal
+
+- [Terms & Conditions](https://support.cuvva.com/en/articles/5907873-cuvva-s-terms-and-conditions)
+- [Privacy Notice](https://support.cuvva.com/en/articles/5907862-cuvva-s-privacy-notice)

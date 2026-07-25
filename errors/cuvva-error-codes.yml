@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/cuvva/docs/tree/master/apis
+format: cuvva-standard
+envelope:
+  description: >-
+    Errors conform to the Cuvva Standard (cuvva/cher — "coded human & engineer
+    readable" errors). Each error carries a machine-readable `code`. Errors may be
+    wrapped in one or more encapsulating error objects, where the underlying cause
+    is exposed as a `reason`. Some errors also carry structured `meta`/detail
+    fields (e.g. a validation error listing offending fields).
+  fields: [code, reason, meta]
+  library: github.com/cuvva/cuvva-public-go (cher package)
+codes:
+  - code: not_found
+    meaning: The requested resource was not found.
+    services: [vehicle, mot, and others]
+  - code: ambiguous_data
+    meaning: More than one record matched the query (e.g. multiple vehicles for a lookup).
+    services: [vehicle]
+  - code: id_invalid
+    meaning: The supplied ID is not a valid identifier (e.g. not a valid MongoDB ObjectID).
+    services: [vehicle]
+  - code: missing_vehicle_information
+    meaning: The vehicle exists but does not contain the minimum required information.
+    services: [vehicle]
+  - code: vehicle_mods
+    meaning: Vehicle modifications make the vehicle ineligible / require review (quote validation).
+    services: [motor-coverage]
+notes: >-
+  Cuvva does not publish RFC 9457 problem+json; it uses its own coded-error
+  standard. The codes above are the ones documented verbatim in the public API
+  docs; the full per-service code registry is not published.
