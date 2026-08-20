@@ -40,6 +40,15 @@ tags:
 - Insurance
 - Insurtech
 - Car Insurance
+- Financial-Services
+- Mobile
+- Authentication
+- United Kingdom
+tags_raw:
+- Company
+- Insurance
+- Insurtech
+- Car Insurance
 - Financial Services
 - Mobile
 - OAuth
@@ -59,6 +68,10 @@ apis:
   humanURL: https://github.com/cuvva/docs/tree/master/apis
   baseURL: https://api.prod.cuv-prod.app
   tags:
+  - Insurance
+  - Authentication
+  - Vehicle Data
+  tags_raw:
   - Insurance
   - OAuth
   - Vehicle Data
