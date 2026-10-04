@@ -51,7 +51,7 @@ tags:
 - Insurance
 - Insurtech
 - Car Insurance
-- Financial-Services
+- Financial Services
 - Mobile
 - Authentication
 - United Kingdom
@@ -64,6 +64,7 @@ tags_raw:
 - Mobile
 - OAuth
 - United Kingdom
+- Financial-Services
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
